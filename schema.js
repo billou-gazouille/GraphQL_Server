@@ -2,19 +2,29 @@ module.exports = `#grapghql
     type Game{
         id: ID!
         title: String!
-        noice: String
+        creator: GameCreator!
+    }
+    type GameCreator{
+        id: ID!
+        name: String!
+        gamesPublished: [Game!]
     }
     type Review{
         id: ID!
-        trating: Int!
+        rating: Int!
+        content: String!
+        player: Player!
+        game: Game!
     }
-    type Author{
+    type Player{
         id: ID!
         name: String!
+        reviews: [Review!]
     }
     type Query{
-        hello: String!
         games: [Game!]
-        game(id: ID!): Game!
+        game(title: String): Game!
+        gameCreator(id: ID!): [GameCreator!]
+        review(id: ID!): Review!
     }
 `;
