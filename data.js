@@ -4,6 +4,7 @@ let games = [
     {id: '3', title: 'Elden Ring', creator_id: '1', platform: ['PS5', 'Xbox', 'PC']},
     {id: '4', title: 'Mario Kart', creator_id: '3', platform: ['Switch']},
     {id: '5', title: 'Pokemon Scarlet', creator_id: '2', platform: ['PS5', 'Xbox', 'PC']},
+    {id: '6', title: 'Super Cars', creator_id: '2', platform: ['PS5', 'Xbox', 'PC']},
   ]
 
   let gameCreators = [

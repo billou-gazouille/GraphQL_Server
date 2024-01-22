@@ -27,4 +27,7 @@ module.exports = `#grapghql
         gameCreator(id: ID!): [GameCreator!]
         review(id: ID!): Review!
     }
+    type Mutation{
+        deleteGame(id: ID!): [Game]
+    }
 `;

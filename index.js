@@ -10,7 +10,7 @@
 const { ApolloServer } = require('@apollo/server');
 const { startStandaloneServer } = require('@apollo/server/standalone');
 
-const { games, players, reviews, gameCreators } = require('./data');
+let { games, players, reviews, gameCreators } = require('./data');
 
 const typeDefs = require('./schema');
 
@@ -39,6 +39,12 @@ const resolvers = {
         name: (parent) => parent.name,
         reviews: (parent) => 
             reviews.filter(r => r.player_id === parent.id),
+    },
+    Mutation: {
+        deleteGame: (parent, args) => {
+            games = games.filter(g => g.id !== args.id);
+            return games;
+        },
     },
 };
 
